@@ -24,9 +24,9 @@ class InitialTables extends Migration
 
            $table->string('phone_number',13)->nullable()->after('remember_token');
            $table->string('picture')->default('default.jpg')->after('remember_token');
-           $table->unsignedTinyInteger('language_id')->after('remember_token')->default(1);
+           $table->unsignedTinyInteger('language_id')->after('remember_token');
 
-           $table->foreign('language_id')->references('id')->on('user_languages');
+           $table->foreign('language_id')->references('id')->on('user_languages')->onDelete('NO ACTION')->onUpdate('CASCADE');
         });
 
 
@@ -42,7 +42,7 @@ class InitialTables extends Migration
 
            $table->softDeletes();
 
-           $table->foreign('user_id')->references('id')->on('users');
+           $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
         });
 
         Schema::create('user_types',function (Blueprint $table){
@@ -59,7 +59,7 @@ class InitialTables extends Migration
 
             $table->softDeletes();
 
-            $table->foreign('user_type_id')->references('id')->on('user_types');
+            $table->foreign('user_type_id')->references('id')->on('user_types')->onDelete('NO ACTION')->onUpdate('CASCADE');
         });
 
     }

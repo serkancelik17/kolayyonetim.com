@@ -13,3 +13,5 @@ yarn-error.log
 /_TEMP/
 /package-lock.json
 /.idea/
+composer.lock
+

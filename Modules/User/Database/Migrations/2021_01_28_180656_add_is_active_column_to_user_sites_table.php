@@ -15,7 +15,7 @@ class AddIsActiveColumnToUserSitesTable extends Migration
     {
         Schema::table('user_sites', function(Blueprint $table){
             $table->boolean('is_active')->default(false);
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 

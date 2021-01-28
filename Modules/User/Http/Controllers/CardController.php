@@ -6,7 +6,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class UserController extends Controller
+class CardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,22 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user::index');
-    }
-
-    public function login() {
-
-        return view('user::login');
-    }
-
-    public function logout() {
-
-        return view('user::logout');
-    }
-
-    public function register() {
-
-        return view('user::register');
+        return view('user::card/index');
     }
 
     /**
@@ -38,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('user::create');
+        return view('user::card/create');
     }
 
     /**
@@ -52,23 +37,13 @@ class UserController extends Controller
     }
 
     /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function show($id)
-    {
-        return view('user::show');
-    }
-
-    /**
      * Show the form for editing the specified resource.
      * @param int $id
      * @return Renderable
      */
     public function edit($id)
     {
-        return view('user::edit');
+        return view('user::card/edit');
     }
 
     /**

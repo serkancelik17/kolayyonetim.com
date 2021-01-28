@@ -6,7 +6,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class UserController extends Controller
+class SiteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,21 +15,6 @@ class UserController extends Controller
     public function index()
     {
         return view('user::index');
-    }
-
-    public function login() {
-
-        return view('user::login');
-    }
-
-    public function logout() {
-
-        return view('user::logout');
-    }
-
-    public function register() {
-
-        return view('user::register');
     }
 
     /**

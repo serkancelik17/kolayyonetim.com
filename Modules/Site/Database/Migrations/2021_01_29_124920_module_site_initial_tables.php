@@ -71,7 +71,7 @@ class ModuleSiteInitialTables extends Migration
            $table->unsignedInteger('id',true);
            $table->unsignedInteger('block_id'); //
            $table->string('floor',15)->nullable();
-           $table->string('no',50)->nullable();
+           $table->string('no',50);
            $table->float('dues_amount',10,2)->nullable();
            $table->unsignedInteger('type_id')->nullable();//
            $table->unsignedInteger('group_id')->nullable();//

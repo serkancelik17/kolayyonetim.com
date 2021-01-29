@@ -4,8 +4,9 @@ namespace Modules\Site\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
-class SiteDatabaseSeeder extends Seeder
+class SiteUnitTypesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,10 +16,10 @@ class SiteDatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
+        $unit_types = [
+            ['site_id'=>1,'name'=>'3+1'],
+        ];
 
-         $this->call(SitesTableSeeder::class);
-         $this->call(SiteBlocksTableSeeder::class);
-         $this->call(SiteUnitsTableSeeder::class);
-
+        DB::table('site_unit_types')->insert($unit_types);
     }
 }

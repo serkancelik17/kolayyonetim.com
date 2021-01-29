@@ -4,8 +4,9 @@ namespace Modules\Site\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
-class SiteDatabaseSeeder extends Seeder
+class SitesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,9 +17,11 @@ class SiteDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-         $this->call(SitesTableSeeder::class);
-         $this->call(SiteBlocksTableSeeder::class);
-         $this->call(SiteUnitsTableSeeder::class);
+        //238 - çanakkale merkez
+        $sites = [
+            ['location_district_id'=>238,'name'=>'Yıldızkent Sitesi'],
+        ];
 
+        DB::table('sites')->insert($sites);
     }
 }

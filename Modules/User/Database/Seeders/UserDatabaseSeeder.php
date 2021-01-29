@@ -16,7 +16,10 @@ class UserDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-         //$this->call(UserLanguageTableSeeder::class);
+         $this->call(UserLanguageTableSeeder::class); //languages
          $this->call(UserTableSeeder::class);
+         $this->call(UserCardsTableSeeder::class); //cards
+         $this->call(UserTypesTableSeeder::class); // types
+        // $this->call(UserSitesTableSeeder::class); // sites
     }
 }

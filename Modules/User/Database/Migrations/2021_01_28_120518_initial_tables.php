@@ -26,6 +26,8 @@ class InitialTables extends Migration
            $table->string('picture')->default('default.jpg')->after('remember_token');
            $table->unsignedTinyInteger('language_id')->after('remember_token');
 
+           $table->softDeletes();
+
            $table->foreign('language_id')->references('id')->on('user_languages')->onDelete('NO ACTION')->onUpdate('CASCADE');
         });
 
@@ -38,8 +40,9 @@ class InitialTables extends Migration
            $table->string('number',16);
            $table->unsignedTinyInteger('expire_month');
            $table->unsignedSmallInteger('expire_year');
-           $table->unsignedSmallInteger('cvc');
+           $table->string('cvc',3);
 
+           $table->timestamps();
            $table->softDeletes();
 
            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
@@ -57,6 +60,7 @@ class InitialTables extends Migration
             $table->unsignedTinyInteger('user_type_id');
             $table->unsignedInteger('person_id')->nullable();
 
+            $table->timestamps();
             $table->softDeletes();
 
             $table->foreign('user_type_id')->references('id')->on('user_types')->onDelete('NO ACTION')->onUpdate('CASCADE');
